@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'custom-debug',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./debug.component.scss']
 })
 export class DebugComponent implements OnInit {
+
+  @Input() form: NgForm;
 
   constructor() { }
 
