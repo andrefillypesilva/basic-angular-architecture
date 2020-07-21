@@ -1,15 +1,25 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanDeactivate } from '@angular/router';
+
+// Services
+import { SharedService } from '../services/shared.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DirtyFormGuard implements CanActivate {
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+export class DirtyFormGuard implements CanDeactivate<boolean> {
+  canDeactivate(): boolean {
+    if (!SharedService.isThereDirtyForm) {
+      return true;
+    }
+
+    let confirmation: boolean = window.confirm('Are you sure you want to leave this page?');
+
+    if (confirmation) {
+      SharedService.isThereDirtyForm = false;
+    }
+
+    return confirmation;
   }
-  
+
 }

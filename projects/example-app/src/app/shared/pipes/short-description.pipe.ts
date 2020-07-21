@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ShortDescriptionPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(fullDescription: string, size: number): string {
+    return fullDescription.substr(0, size) + (fullDescription.length > size ? '...' : '');
   }
 
 }
