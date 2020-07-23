@@ -8,16 +8,16 @@ export abstract class GenericField implements ControlValueAccessor, OnInit {
 
     @Input() label: string;
     @Input() id: string;
-    @Input() type: string = 'text';
+    @Input() type = 'text';
     @Input() placeholder: string;
-    @Input() isReadOnly: boolean = false;
+    @Input() isReadOnly = false;
     @Input() field: FormControl;
-    @Input() isTouched: boolean = false;
+    @Input() isTouched = false;
     @Input() validationMessage: string;
 
-    hasError: boolean = false;
+    hasError = false;
 
-    firstInteraction: boolean = true;
+    firstInteraction = true;
 
     protected innerValue: any;
 
@@ -26,7 +26,7 @@ export abstract class GenericField implements ControlValueAccessor, OnInit {
     }
 
     set value(_value: any) {
-        if (_value != this.innerValue) {
+        if (_value !== this.innerValue) {
             this.innerValue = _value;
             this.onChangeCb(_value);
         }

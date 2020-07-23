@@ -8,7 +8,7 @@ const INPUT_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => GenericInputComponent),
   multi: true
-}
+};
 
 @Component({
   selector: 'custom-generic-input',

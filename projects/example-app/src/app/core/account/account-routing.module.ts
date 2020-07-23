@@ -12,7 +12,7 @@ import { DirtyFormGuard } from './../../shared/guards/dirty-form.guard';
 const routes = [
   { path: '', component: AccountComponent },
   { path: 'login', component: LoginComponent },
-  { 
+  {
     path: 'new-account',
     component: NewAccountComponent,
     canDeactivate: [ DirtyFormGuard ]

@@ -32,7 +32,7 @@ export class NewAccountComponent implements OnInit {
   }
 
   createForm(): void {
-    let items: IGenericFormItem[] = [{
+    const items: IGenericFormItem[] = [{
       label: 'Name',
       id: 'name',
       type: 'text',
@@ -70,7 +70,7 @@ export class NewAccountComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
-  
+
   onCreate(_form: FormGroup): void {
     this.isLoading = true;
 

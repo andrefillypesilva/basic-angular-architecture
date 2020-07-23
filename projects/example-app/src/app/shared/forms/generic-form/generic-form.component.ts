@@ -12,9 +12,9 @@ export class GenericFormComponent implements OnInit {
 
   @Input() genericForm: IGenericForm;
   @Input() genericFormBuilderGroup: FormGroup;
-  @Input() isLoading: boolean = false;
+  @Input() isLoading = false;
 
-  @Output() onSaveTrigger = new EventEmitter<FormGroup>();
+  @Output() saveTrigger = new EventEmitter<FormGroup>();
 
   constructor() { }
 
@@ -22,11 +22,11 @@ export class GenericFormComponent implements OnInit {
   }
 
   onSave(): void {
-    this.onSaveTrigger.next(this.genericFormBuilderGroup);
+    this.saveTrigger.next(this.genericFormBuilderGroup);
   }
 
   getFormControl(_name: string): FormControl {
-    return <FormControl>this.genericFormBuilderGroup.get(_name);
+    return this.genericFormBuilderGroup.get(_name) as FormControl;
   }
 
 }

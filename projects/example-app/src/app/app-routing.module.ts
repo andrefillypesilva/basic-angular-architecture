@@ -14,7 +14,7 @@ const routes: Routes = [
     component: PrivateComponent,
     canActivate: [ AuthGuard ]
   },
-  { 
+  {
     path: 'account',
     loadChildren: () => import('./core/account/account.module').then(mod => mod.AccountModule)
   },

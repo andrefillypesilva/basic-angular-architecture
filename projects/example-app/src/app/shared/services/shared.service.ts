@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
 
-  static isThereDirtyForm: boolean = false;
-  
+  static isThereDirtyForm = false;
+
   constructor() { }
 }

@@ -18,7 +18,7 @@ export class User {
     public get name(): string {
         return this._name;
     }
-    
+
     public set name(_name: string) {
         this._name = _name;
     }
@@ -26,7 +26,7 @@ export class User {
     public get username(): string {
         return this._username;
     }
-    
+
     public set username(_username: string) {
         this._username = _username;
     }
@@ -34,7 +34,7 @@ export class User {
     public get password(): string {
         return this._password;
     }
-    
+
     public set password(_password: string) {
         this._password = _password;
     }
@@ -42,11 +42,11 @@ export class User {
     public get token(): string {
         return this._token;
     }
-    
+
     generateToken(): string {
         // logic to generate token
         this._token = 'generated-token';
         return this._token;
     }
-    
+
 }

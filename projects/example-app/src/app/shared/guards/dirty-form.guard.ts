@@ -13,7 +13,7 @@ export class DirtyFormGuard implements CanDeactivate<boolean> {
       return true;
     }
 
-    let confirmation: boolean = window.confirm('Are you sure you want to leave this page?');
+    const confirmation: boolean = window.confirm('Are you sure you want to leave this page?');
 
     if (confirmation) {
       SharedService.isThereDirtyForm = false;

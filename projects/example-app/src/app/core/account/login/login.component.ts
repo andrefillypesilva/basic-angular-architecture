@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   createForm(): void {
-    let items: IGenericFormItem[] = [{
+    const items: IGenericFormItem[] = [{
       label: 'E-mail',
       id: 'username',
       type: 'text',
