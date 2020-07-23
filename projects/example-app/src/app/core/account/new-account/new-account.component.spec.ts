@@ -1,6 +1,15 @@
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// Component
 import { NewAccountComponent } from './new-account.component';
+
+// Services
+import { AuthService } from './../../../shared/services/auth.service';
+
+// Test Mock
+import { GenericFormMock } from '../../../models/classes/test-helper';
 
 describe('NewAccountComponent', () => {
   let component: NewAccountComponent;
@@ -8,7 +17,9 @@ describe('NewAccountComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewAccountComponent ]
+      imports: [ RouterModule.forRoot([]), FormsModule, ReactiveFormsModule ],
+      declarations: [ NewAccountComponent ],
+      providers: [ { provide: AuthService, useValue: { } } ]
     })
     .compileComponents();
   }));
@@ -16,6 +27,10 @@ describe('NewAccountComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NewAccountComponent);
     component = fixture.componentInstance;
+
+    component.genericForm = new GenericFormMock();
+    component.genericFormBuilderGroup = new FormGroup({});
+
     fixture.detectChanges();
   });
 

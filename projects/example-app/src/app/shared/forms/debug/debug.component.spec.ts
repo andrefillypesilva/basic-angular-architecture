@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// Component
 import { DebugComponent } from './debug.component';
+import { NgForm } from '@angular/forms';
 
 describe('DebugComponent', () => {
   let component: DebugComponent;
@@ -16,6 +18,9 @@ describe('DebugComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DebugComponent);
     component = fixture.componentInstance;
+
+    component.form = new NgForm([], []);
+
     fixture.detectChanges();
   });
 

@@ -16,27 +16,25 @@ import { User } from '../../models/classes/user';
 // Services
 import { LocalStorageService } from './local-storage.service';
 
+const urlServer = `${environment.api}/`;
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private urlServer: string;
-
   constructor(
     private _router: Router,
     private _http: HttpClient,
     private _localStorageService: LocalStorageService
-  ) {
-    this.urlServer = `${environment.api}/`;
-  }
+  ) { }
 
   login(_user: User): Observable<IHttpResponseObject<User>> {
-    return this._http.post<IHttpResponseObject<User>>(`${this.urlServer}authenticate`, _user);
+    return this._http.post<IHttpResponseObject<User>>(`${urlServer}authenticate`, _user);
   }
 
   getUser(_user: User): Observable<User> {
-    return this._http.get<IHttpResponseObject<User>>(this.urlServer)
+    return this._http.get<IHttpResponseObject<User>>(urlServer)
     .pipe(
       map((response: IHttpResponseObject<User>) => response.object)
     );
@@ -53,7 +51,7 @@ export class AuthService {
   }
 
   private create(_user: User): Observable<IHttpResponseObject<User>> {
-    return this._http.post<IHttpResponseObject<User>>(this.urlServer, _user)
+    return this._http.post<IHttpResponseObject<User>>(urlServer, _user)
       .pipe(
         take(1)
       );

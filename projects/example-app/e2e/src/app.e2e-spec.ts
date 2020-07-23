@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('example-app app is running!');
+    expect(page.getTitleByXpath('/html/body/custom-root/custom-content/div/custom-example/div[1]/h3')).toEqual('Welcome to Basic Angular Architecture!');
   });
 
   afterEach(async () => {
