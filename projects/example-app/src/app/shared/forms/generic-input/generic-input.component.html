@@ -1,1 +1,8 @@
-<p>generic-input works!</p>
+<custom-validator-message [show]="hasError" [errorType]="'danger'" [message]="validationMessage">
+</custom-validator-message>
+
+<div class="form-group">
+    <label [attr.for]="id" [class.text-danger]="hasError">{{ label }}</label>
+    <input #inputElement [type]="type" class="form-control" [class.has-error]="hasError" [id]="id" [placeholder]="placeholder"
+        [readonly]="!!isReadOnly" [(ngModel)]="value" (keyup)="onKeyUp()" (blur)="onBlur(validationMessage)" />
+</div>

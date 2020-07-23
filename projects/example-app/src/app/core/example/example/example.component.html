@@ -1,2 +1,15 @@
-<custom-header></custom-header>
-<custom-footer></custom-footer>
+<div class="jumbotron">
+    <h3 class="display-5">Welcome to Basic Angular Architecture!</h3>
+    <p class="lead">It is a simple starting point to build your maintainable and extendable Angular project.</p>
+</div>
+<a class="btn btn-secondary btn-lg btn-block" [routerLink]="['/account/login']">Login</a>
+<div class="new-account-box">
+    <hr>
+    <a [routerLink]="['/account/new-account']" class="new-account">Create My Account</a>
+    <hr>
+</div>
+
+<h5>Page description (using Pipe example)</h5>
+<p>{{ pageDescription | shortDescription : 144 }}</p>
+
+<a [routerLink]="['/private-route']" class="btn btn-warning btn-lg btn-block">Go to private route</a>

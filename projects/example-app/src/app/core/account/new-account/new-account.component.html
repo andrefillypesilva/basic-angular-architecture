@@ -1,0 +1,12 @@
+<h5>Create New Account</h5>
+<br />
+
+<custom-generic-form [genericForm]="genericForm" [genericFormBuilderGroup]="genericFormBuilderGroup"
+    [isLoading]="isLoading" (onSaveTrigger)="onCreate($event)">
+</custom-generic-form>
+
+<div class="new-account-box">
+    <hr>
+    <a [routerLink]="['/account/login']" class="login">Login</a>
+    <hr>
+</div>

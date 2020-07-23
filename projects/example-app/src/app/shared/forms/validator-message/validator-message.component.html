@@ -1,1 +1,2 @@
-<p>validator-message works!</p>
+<ngb-alert *ngIf="show" [dismissible]="dismissible" [type]="errorType" (close)="show = !show"><span
+        [innerHTML]="message"></span></ngb-alert>

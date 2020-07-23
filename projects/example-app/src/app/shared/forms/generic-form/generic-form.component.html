@@ -1,0 +1,30 @@
+<form [formGroup]="genericFormBuilderGroup" (ngSubmit)="onSave()">
+    <ng-container *ngFor="let genericFormItem of genericForm.items; let i = index;">
+
+        <ng-container *ngIf="i == 0">
+            <h4>First information</h4>
+            <hr>
+        </ng-container>
+
+        <ng-container *ngIf="genericFormItem.divider">
+            <br>
+            <h4>{{ genericFormItem.helpTitle }}</h4>
+            <hr>
+            <p [innerHTML]="genericFormItem.helpText"></p>
+        </ng-container>
+
+        <custom-generic-input *ngIf="genericFormItem.type" [label]="genericFormItem.label" [id]="genericFormItem.id"
+            [placeholder]="genericFormItem.placeholder" [field]="getFormControl(genericFormItem.id)"
+            [validationMessage]="genericFormItem.validationMessage" [formControlName]="genericFormItem.id"
+            [type]="genericFormItem.type">
+        </custom-generic-input>
+
+    </ng-container>
+
+    <button class="btn btn-lg btn-block" id="newAccountBtn" [class.btn-primary]="genericFormBuilderGroup.valid"
+        [class.btn-secondary]="!genericFormBuilderGroup.valid || isLoading" type="submit"
+        [disabled]="!genericFormBuilderGroup.valid || isLoading"
+        [innerHTML]="isLoading ? 'Trying to execute operation...' : 'Execute operation'"></button>
+</form>
+
+<!-- <custom-debug [form]="genericFormBuilderGroup"></custom-debug> -->

@@ -3,8 +3,7 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'custom-debug',
-  templateUrl: './debug.component.html',
-  styleUrls: ['./debug.component.scss']
+  templateUrl: './debug.component.html'
 })
 export class DebugComponent implements OnInit {
 
