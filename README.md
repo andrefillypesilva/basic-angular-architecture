@@ -5,6 +5,8 @@ It is a skeleton architecture to bootstrap a maintainable and reusable/extendabl
 After clone this repository you will need to run `npm i` to install all dependencies.
 After that, to customize your project, you will need to rename `example` modules/components/folders to fit in your specific project name. Besides that, you will need to replace all references to `example` in the `angular.json` file to your specific project name too.
 
+![Application Example](https://github.com/andrefillypesilva/basic-angular-architecture/blob/master/structure_diagram.svg?raw=true)
+
 ## How to run
 To run this application you will need only run `npm start` as defined in the package.json file or run `ng serve` as defined in Angular documentation.
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
