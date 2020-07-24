@@ -8,7 +8,8 @@ After that, to customize your project, you will need to rename `example` modules
 ![Structure Diagram](https://github.com/andrefillypesilva/basic-angular-architecture/blob/master/projects/example-app/structure_diagram.svg?raw=true)
 
 ## How to run
-To run this application you will need only run `npm start` as defined in the package.json file or run `ng serve` as defined in Angular documentation.
+You can see this application online [here](https://andrefillypesilva.github.io/basic-angular-architecture/)!
+To run this application in your local environment you will need only run `npm start` as defined in the package.json file or run `ng serve` as defined in Angular documentation.
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
