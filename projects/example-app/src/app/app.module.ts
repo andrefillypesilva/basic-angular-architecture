@@ -8,14 +8,19 @@ import { AppRoutingModule } from './app-routing.module';
 // Components
 import { AppComponent } from './app.component';
 
+// Interceptors
+import { httpInterceptors } from './shared/interceptors';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     CoreModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [httpInterceptors],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
